@@ -17,4 +17,9 @@ public class ProductRepository {
         String sql = "SELECT * FROM product";
         return jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Product.class));
     }
+    public Product getProductById(Long id) {
+        String sql = "SELECT * FROM product WHERE id = ?";
+        return jdbcTemplate.queryForObject(sql, new Object[]{id}, new BeanPropertyRowMapper<>(Product.class));
+    }
+
 }
