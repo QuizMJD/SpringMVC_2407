@@ -22,7 +22,7 @@ public class Homepage {
     public ModelAndView showHome_2() {
         System.out.println("THis is home url");
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("home");
+        modelAndView.setViewName("product/home");
         modelAndView.addObject("message", "Hello 2");
         return modelAndView;
     }
@@ -32,7 +32,7 @@ public class Homepage {
     @RequestMapping("redirect_1")// Định nghĩa đừng dẫn
     public String rediect_1(Model model, @RequestParam String message) {
         model.addAttribute("message", message);
-        return "home";
+        return "product/home";
     }
 
     @RequestMapping("redirect_2")// Định nghĩa đừng dẫn
@@ -45,21 +45,21 @@ public class Homepage {
     @RequestMapping("/")// Định nghĩa đừng dẫn
     public String showHome_1() {
         System.out.println("THis is home url");
-        return "home";
+        return "product/home";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)// Định nghĩa đừng dẫn
     public String showHome_2(Model model) {
         List<Product> products = productRepository.getAllProducts();
         model.addAttribute("product1", products);
-        return "home";
+        return "product/home";
     }
     @GetMapping("/home/product/{id}")
     public String showDetailProduct(Model model, @PathVariable("id") Long id) {
         Product product = productRepository.getProductById(id);
         model.addAttribute("product", product);
 
-        return"detail";
+        return "product/detail";
     }
 
 

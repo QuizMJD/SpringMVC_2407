@@ -13,6 +13,8 @@
     <!-- Bootstrap v5.0.1 -->
     <link href="/static/css/bootstrap.css" type="text/css" rel="stylesheet">
     <script src="/static/js/bootstrap.bundle.js" type="text/javascript"></script>
+    <!-- Bootstrap Icons v1.5.0 -->
+    <link href="/static/css/bootstrap-icons.css" type="text/css" rel="stylesheet">
 
     <!-- Custom Styles -->
     <link href="/static/css/styles.css" type="text/css" rel="stylesheet">
@@ -21,7 +23,7 @@
 </head>
 
 <body>
-<jsp:include page="./layout/section-header.jsp" />
+<jsp:include page="../layout/section-header.jsp" />
 
 <section class="section-content">
     <div class="container">
@@ -90,6 +92,6 @@
     </div>
 </section>
 
-<jsp:include page="./layout/section-footer.jsp" />
+<jsp:include page="../layout/section-footer.jsp" />
 </body>
 </html>
