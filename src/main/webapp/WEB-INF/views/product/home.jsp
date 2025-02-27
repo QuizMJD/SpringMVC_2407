@@ -38,152 +38,37 @@
             <h3 class="section-title">Danh mục sản phẩm</h3>
             <a class="btn btn-secondary" href="#" role="button" style="height: fit-content;">Xem tất cả</a>
         </header> <!-- section-heading.// -->
+<%--        <div class="row item-grid">--%>
+<%--            <div class="col-lg-3 col-md-6">--%>
+<%--                <div class="card mb-4">--%>
+<%--                    <div class="card-body">--%>
+<%--                        <a href="#" class="stretched-link">--%>
+<%--                            <div class="d-flex align-items-center">--%>
+<%--                                <img src="/static/img/50px.png">--%>
+<%--                                <span class="category-title ms-3">Sách giáo khoa</span>--%>
+<%--                            </div>--%>
+<%--                        </a>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div> <!-- col.// -->--%>
+
+<%--        </div> <!-- row.// -->--%>
         <div class="row item-grid">
+            <c:forEach var="cat" items="${category1}">
             <div class="col-lg-3 col-md-6">
                 <div class="card mb-4">
                     <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
+                        <div class="d-flex align-items-center">
+                            <img src="<c:url value='/static/img/${cat.imageName}' />">
+                            <span class="category-title ms-3">${cat.name}</span>
+                        </div>
                         </a>
                     </div>
                 </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-            <div class="col-lg-3 col-md-6">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <a href="#" class="stretched-link">
-                            <div class="d-flex align-items-center">
-                                <img src="/static/img/50px.png">
-                                <span class="category-title ms-3">Sách giáo khoa</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div> <!-- col.// -->
-        </div> <!-- row.// -->
+            </div>
+                <!-- col.// -->
+                </c:forEach>
+            </div>
     </div> <!-- container.// -->
 </section> <!-- section-content.// -->
 
