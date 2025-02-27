@@ -3,6 +3,7 @@ package vn.t3h.bookshop.client.config;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.util.UrlPathHelper;
@@ -12,8 +13,6 @@ import org.springframework.web.util.UrlPathHelper;
 @EnableWebMvc
 @EnableScheduling
 public class WebConfig implements WebMvcConfigurer {
-
-
 
     // Handle HTTP GET requests for /resources/** by efficiently serving
     // static resources under ${webappRoot}/resources/
