@@ -47,7 +47,7 @@ public class Homepage {
     @RequestMapping("/")// Định nghĩa đừng dẫn
     public String showHome_1() {
         System.out.println("THis is home url");
-        return "product/home";
+        return "product/homee";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)// Định nghĩa đừng dẫn

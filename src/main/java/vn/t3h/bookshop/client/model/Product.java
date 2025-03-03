@@ -1,6 +1,7 @@
 package vn.t3h.bookshop.client.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class Product {
     private Long id;
@@ -20,6 +21,7 @@ public class Product {
     private LocalDateTime updatedAt;
     private LocalDateTime startsAt;
     private LocalDateTime endsAt;
+    private List<Long> categoryIds;
 
     // Getters and Setters
     public Long getId() {
@@ -156,5 +158,13 @@ public class Product {
 
     public void setEndsAt(LocalDateTime endsAt) {
         this.endsAt = endsAt;
+    }
+
+    public List<Long> getCategoryIds() {
+        return categoryIds;
+    }
+
+    public void setCategoryIds(List<Long> categoryIds) {
+        this.categoryIds = categoryIds;
     }
 }

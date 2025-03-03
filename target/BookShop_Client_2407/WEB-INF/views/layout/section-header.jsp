@@ -21,7 +21,7 @@
                 <div class="col-lg-5 col-xl-4">
                     <ul class="nav col-12 col-lg-auto my-2 my-lg-0 justify-content-center justify-content-lg-end text-small">
                         <li>
-                            <a href="#" class="nav-link text-body">
+                            <a href="/manager/product" class="nav-link text-body">
                                 <i class="bi bi-person d-block text-center fs-3"></i>
                                 Tài khoản
                             </a>
