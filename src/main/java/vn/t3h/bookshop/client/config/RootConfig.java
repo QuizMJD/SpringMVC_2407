@@ -13,7 +13,6 @@ import javax.sql.DataSource;
 // Đọc file cấu hình
 @PropertySource("classpath:application.properties")
 public class RootConfig {
-
     @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 

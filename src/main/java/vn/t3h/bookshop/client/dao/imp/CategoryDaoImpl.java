@@ -8,16 +8,8 @@ import vn.t3h.bookshop.client.model.Category;
 
 import java.util.List;
 @Repository
-public class CategoryDaoImpl implements CategoryDao {
-    private final JdbcTemplate jdbcTemplate;
-
+public class CategoryDaoImpl extends AbstractDao<Category> implements CategoryDao {
     public CategoryDaoImpl(JdbcTemplate jdbcTemplate) {
-        this.jdbcTemplate = jdbcTemplate;
-    }
-
-    @Override
-    public List<Category> findAll() {
-        String sql = "SELECT * FROM category";
-        return this.jdbcTemplate.query(sql, new BeanPropertyRowMapper<>(Category.class));
+        super(jdbcTemplate, Category.class);
     }
 }
