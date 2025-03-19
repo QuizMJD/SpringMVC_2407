@@ -5,17 +5,13 @@ import vn.t3h.bookshop.client.dao.CategoryDao;
 import vn.t3h.bookshop.client.model.Category;
 import vn.t3h.bookshop.client.service.CategoryService;
 
-import java.util.List;
+/**
+ * Implementation của CategoryService
+ */
 @Service
-public class CategoryServiceImpl implements CategoryService {
-    private final CategoryDao categoryDao;
+public class CategoryServiceImpl extends AbstractService<Category> implements CategoryService {
+
     public CategoryServiceImpl(CategoryDao categoryDao) {
-        this.categoryDao = categoryDao;
-    }
-
-
-    @Override
-    public List<Category> findAll() {
-        return categoryDao.findAll();
+        super(categoryDao);
     }
 }

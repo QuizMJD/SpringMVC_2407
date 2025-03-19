@@ -1,11 +1,17 @@
 package vn.t3h.bookshop.client.dao;
 
-import org.springframework.stereotype.Repository;
 import vn.t3h.bookshop.client.model.Product;
 
-import java.util.List;
+/**
+ * DAO interface cho sản phẩm
+ */
+public interface ProductDao extends BaseDao<Product> {
 
-public interface ProductDao {
-    List<Product> findAll();
+    /**
+     * Lấy sản phẩm theo ID
+     * 
+     * @param id ID của sản phẩm
+     * @return Sản phẩm tìm được hoặc null nếu không tồn tại
+     */
     Product getProductById(Long id);
 }

@@ -1,33 +1,33 @@
 package vn.t3h.bookshop.client.model;
 
-public class Category  {
-    Long id;
-    String name;
-    String description;
-    String imageName;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
-    public Long getId() {
-        return id;
-    }
-    public void setId(Long id) {
-        this.id = id;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public String getImageName() {
-        return imageName;
-    }
-    public void setImageName(String imageName) {
-        this.imageName = imageName;
-    }
+import jakarta.persistence.*;
+import java.util.Set;
+
+/**
+ * Entity class đại diện cho danh mục sản phẩm
+ */
+@Entity
+@Table(name = "categories")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class Category {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String categoryName;
+
+    private String description;
+
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products;
 }

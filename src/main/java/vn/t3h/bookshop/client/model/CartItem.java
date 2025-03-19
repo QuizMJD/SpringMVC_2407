@@ -1,60 +1,51 @@
 package vn.t3h.bookshop.client.model;
-import java.time.LocalDateTime;
+
+import lombok.Getter;
+import lombok.Setter;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+
+import jakarta.persistence.*;
+import java.math.BigDecimal;
+
+/**
+ * Entity class đại diện cho một item trong giỏ hàng
+ */
+@Entity
+@Table(name = "cart_items")
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class CartItem {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long cartId;  // Liên kết với bảng Cart
-    private Long productId;  // Liên kết với bảng Product
-    private int quantity;
-    private LocalDateTime createdAt;
-    private LocalDateTime updatedAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cart_id", nullable = false)
+    private Cart cart;
 
-    public Long getId() {
-        return id;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(nullable = false)
+    private Integer quantity;
 
-    public Long getCartId() {
-        return cartId;
-    }
+    @Column(name = "unit_price")
+    private BigDecimal unitPrice;
 
-    public void setCartId(Long cartId) {
-        this.cartId = cartId;
-    }
-
-    public Long getProductId() {
-        return productId;
-    }
-
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
-
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
+    /**
+     * Tính tổng tiền của item (đã tính discount)
+     */
+    public BigDecimal getSubtotal() {
+        BigDecimal quantityDecimal = BigDecimal.valueOf(quantity);
+        BigDecimal discountDecimal = BigDecimal.valueOf(product.getDiscountValue());
+        return unitPrice.multiply(quantityDecimal)
+                .multiply(BigDecimal.ONE.subtract(discountDecimal));
     }
 }
-
